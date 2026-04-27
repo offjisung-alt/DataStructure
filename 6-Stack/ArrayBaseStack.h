@@ -5,7 +5,7 @@
 #define FALSE 0
 #define STACK_LEN 100
 
-typedef int data;
+typedef int Data;
 
 typedef struct _arrayStack
 {
