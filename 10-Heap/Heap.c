@@ -51,7 +51,7 @@ void HInsert(Heap * ph, HData data)
 
     while(idx != 1)
     {
-        if(ph->comp(data, ph->heapArr[GetParentIDX(idx)]) > 0)
+        if(ph->comp(data, ph->heapArr[GetParentIDX(idx)]) > 0) // 우선순위가 자식이 부모보다 높을 떄
         {
             ph->heapArr[idx] = ph->heapArr[GetParentIDX(idx)];
             idx = GetParentIDX(idx);
