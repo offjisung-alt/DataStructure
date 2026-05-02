@@ -69,7 +69,41 @@ void PreorderTraverse(BTreeNode * bt)
 
 void PostorderTraverse(BTreeNode * bt)
 {
+    if(bt == NULL)
+        return;
     InorderTraverse(bt->left);
     InorderTraverse(bt->right);
     printf("%d \n", bt->data);
+}
+
+BTreeNode * RemoveLeftSubTree(BTreeNode * bt)
+{
+    BTreeNode *delNode;
+    if(bt != NULL)
+    {
+        delNode = bt->left;
+        bt->left = NULL;
+    }
+    return delNode;
+}
+
+BTreeNode * RemoveRightSubTree(BTreeNode * bt)
+{
+    BTreeNode *delNode;
+    if(bt != NULL)
+    {
+        delNode = bt->right;
+        bt->right = NULL;
+    }
+    return delNode;
+}
+
+void ChangeLeftSubTree(BTreeNode * main, BTreeNode * sub)
+{
+    main->left = sub;
+}
+
+void ChangeRightSubTree(BTreeNode * main, BTreeNode * sub)
+{
+    main->right = sub;
 }
